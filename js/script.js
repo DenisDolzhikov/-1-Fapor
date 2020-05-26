@@ -15,7 +15,7 @@ let headerSliderSelector = document.querySelector('.header-slider');
 let headerSlider = new Flickity(headerSliderSelector, {
     cellAlign: 'left',
     contain: true,
-    //autoPlay: 4000
+    autoPlay: 5000
 });
 
 let worksSliderSelector = document.querySelector('.works-slider');
@@ -49,6 +49,35 @@ let recognitionSlider = new Flickity(recognitionSliderSelector, {
     cellAlign: true,
     draggable: true,
 })
+
+/* Animations */
+
+// Header animations
+headerSlider.on( 'select', function(index) {
+  if (index == 1) {
+
+      let headerText = document.getElementsByClassName('slide-text2');
+      for (let i = 0; i < headerText.length; i++) {
+          headerText[i].style.visibility = "visible";
+          headerText[i].classList.add('animate__fadeInRight');
+      }
+  } else if (index == 2) {
+
+      let headerText = document.getElementsByClassName('slide-text3');
+      for (let i = 0; i < headerText.length; i++) {
+          headerText[i].style.visibility = "visible";
+          headerText[i].classList.add('animate__fadeInRight');
+      }
+  } else if (index == 3) {
+    
+        let headerText = document.getElementsByClassName('slide-text4');
+        for (let i = 0; i < headerText.length; i++) {
+          headerText[i].style.visibility = "visible";
+            headerText[i].classList.add('animate__fadeInRight');
+        }
+  }
+});
+
 
 /* Tabs */
 function openTab(event, tabName) {
@@ -130,7 +159,7 @@ document.body.addEventListener("keyup", keyEvent => {
 });
 
 
-// Blured images lazy load
+// Blured images by lazy load
 if (window.addEventListener && window.requestAnimationFrame && document.getElementsByClassName) window.addEventListener('load', function() {
 
     // start
@@ -222,23 +251,23 @@ let targetPos1 = target1.offset().top;
 let winHeight1 = $(window).height();
 let scrollToElem1 = targetPos1 - winHeight1;
 $(window).scroll(function(){
-  var winScrollTop1 = $(this).scrollTop();
-  if(winScrollTop1 > scrollToElem1){
-    //сработает когда пользователь доскроллит к элементу number 1
-    $('.number1').dynamicNumber('start');
-  }
+  let winScrollTop1 = $(this).scrollTop();
+    if (winScrollTop1 > scrollToElem1) {
+      //Will work when the user scrolls to number 1
+      $('.number1').dynamicNumber('start');
+    }
 });
 
 let target2 = $('.number2');
 let targetPos2 = target2.offset().top;
 let winHeight2 = $(window).height();
 let scrollToElem2 = targetPos2 - winHeight2;
-$(window).scroll(function(){
-  var winScrollTop2 = $(this).scrollTop();
-  if(winScrollTop2 > scrollToElem2){
-    //сработает когда пользователь доскроллит к элементу number 2
-    $('.number2').dynamicNumber('start');
-  }
+$(window).scroll(function() {
+    let winScrollTop2 = $(this).scrollTop();
+    if (winScrollTop2 > scrollToElem2) {
+      // Will work when the user scrolls to number2
+      $('.number2').dynamicNumber('start');
+    }
 });
 
 let target3 = $('.number3');
@@ -247,8 +276,15 @@ let winHeight3 = $(window).height();
 let scrollToElem3 = targetPos3 - winHeight3;
 $(window).scroll(function(){
   var winScrollTop3 = $(this).scrollTop();
-  if(winScrollTop3 > scrollToElem3){
-    //сработает когда пользователь доскроллит к элементу number 3
+  if (winScrollTop3 > scrollToElem3) {
+    // Will work when the user scrolls to number3
     $('.number3').dynamicNumber('start');
   }
 });
+
+
+/* Preloader */
+
+window.onload = function () {
+  document.body.classList.add('loaded');
+}
