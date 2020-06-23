@@ -53,8 +53,8 @@
 }
 
 #main {
-    padding-top: 100px;
-    background-color: #f7f7f7;
+    padding-top: 110px;
+    background-color: #24282f;
     transition: transform 0.5s;
     height: 100vh;
     z-index: 10;
@@ -73,69 +73,84 @@
     top: 0;
     left: 0;
     right: 0;
-    height: 100px;
     backface-visibility: hidden;
     display: flex;
+    padding-top: 39px;
+    padding-bottom: 39px;
     background: #24282f;
     overflow: hidden;
     z-index: 12;
     color: #ffffff;
   
-
     .layout-centered {
         display: flex;
         justify-content: space-between;
         height: 100%;
-    }
 
-    .open-overlay-nav {
-        display: none;
+        .top-nav-logo {
+            display: flex;
+            align-items: center;
+            position: relative;
+            top: -5px;
+        
+            .top-nav-logo-img {
+                margin-right: 30px;
+            }
+        
+            .top-nav-logo-text {
+                font: 26px Nexa;
+                font-weight: 700;
+                text-transform: uppercase;
+            }
+        
+        }
+
+        .top-nav-menu {
+            display: flex;
+            font: 14px 'Open Sans', sans-serif;
+            text-transform: uppercase;
+        
+            .top-nav-menu-item {
+                margin-left: 65px;
+                position: relative;
+            }
+        
+            .top-nav-menu-item:first-child {
+                margin-left: 0;
+            }
+        
+            .top-nav-menu-item::after {
+                content: "";
+                position: absolute;
+                display: block;
+                right: -20px;
+                left: -20px;
+                bottom: -39px;
+                height: 2px;
+                transition: all 0.26s;
+            }
+        
+            .top-nav-menu-item:hover::after {
+                background-color: #b5a263;
+            }
+        }
+
+        .open-overlay-nav {
+            display: none;
+        }
     }
 }
 
-.top-nav-logo {
-    display: flex;
-    align-items: center;
-}
+.top-nav.scroll {
+    padding-top: 22px;
+    padding-bottom: 10px;
 
-.top-nav-logo-img {
-    margin-right: 30px;
-}
-
-.top-nav-logo-text {
-    font: 26px Nexa;
-    font-weight: 700;
-    text-transform: uppercase;
-}
-
-.top-nav-menu {
-    display: flex;
-    font: 14px 'Open Sans', sans-serif;
-    text-transform: uppercase;
-
-    .top-nav-menu-item {
-        margin-left: 65px;
-        padding-top: 40px;
-        position: relative;
-    }
-
-    .top-nav-menu-item:first-child {
-        margin-left: 0;
-    }
-
-    .top-nav-menu-item::after {
-        content: "";
-        position: absolute;
-        display: block;
-        right: -20px;
-        left: -20px;
-        bottom: 0;
-        height: 2px;
-        transition: all 0.26s;
-    }
-
-    .top-nav-menu-item:hover::after {
-        background-color: #b5a263;
+    .layout-centered {
+        .top-nav-menu {
+            .top-nav-menu-item::after {
+                bottom: -10px;
+            }
+        }
     }
 }
 
@@ -1374,6 +1389,31 @@
 }
 
 @media only screen and (max-width: 1024px) {
+    .top-nav {
+        padding-top: 15px;
+        padding-bottom: 10px;
+
+        .layout-centered {
+
+            .top-nav-logo {
+                top: -2px;
+            }
+
+            .top-nav-menu {
+                display: none;
+            }
+
+            .open-overlay-nav {
+                display: flex;
+                align-items: center;
+                font-size: 2em;
+            }
+        }
+    }
+
+    #main {
+        padding-top: 60px;
+    }
 
     .overlay-nav {
         .overlay-nav-links {
@@ -1384,24 +1424,6 @@
         .close-overlay-nav {
             font-size: 100px;
             right: 40px;
-        }
-    }
-
-    #main {
-        padding-top: 70px;
-    }
-
-    .top-nav {
-        height: 70px;
-
-        .top-nav-menu {
-            display: none;
-        }
-
-        .open-overlay-nav {
-            display: flex;
-            align-items: center;
-            font-size: 2em;
         }
     }
 
@@ -2713,20 +2735,22 @@
 
 @media only screen and (max-width: 360px) {
 
+    .top-nav {
+        padding-top: 12px;
+        padding-bottom: 7px;
+    }
+
+    #main {
+        padding-top: 51px;
+    }
+  
+
     .overlay-nav {
         .close-overlay-nav {
             font-size: 60px;
             right: 25px;
             top: 10px;
         }
-    }
-
-    #main {
-        padding-top: 50px;
-    }
-
-    .top-nav {
-        height: 50px;
     }
 
     .header-slider {

@@ -3,9 +3,9 @@
     font-style: normal;
     font-weight: 300;
     src: local('Nexa Light'),
-        url('/fonts/Nexa/NexaTextDemo-Light.woff2') format('woff2'),
-        url('/fonts/Nexa/NexaTextDemo-Light.woff') format('woff'),
-        url('/fonts/Nexa/NexaText-Light.eot') format('eot')
+        url('../fonts/Nexa/NexaTextDemo-Light.woff2') format('woff2'),
+        url('../fonts/Nexa/NexaTextDemo-Light.woff') format('woff'),
+        url('../fonts/Nexa/NexaText-Light.eot') format('eot')
 }
 
 @font-face {
@@ -13,7 +13,7 @@
     font-style: normal;
     font-weight: 700;
     src: local('Nexa Bold'),
-        url('/fonts/Nexa/NexaTextDemo-Bold.woff2') format('woff2'),
-        url('/fonts/Nexa/NexaTextDemo-Bold.woff') format('woff'),
-        url('/fonts/Nexa/NexaTextDemo-Light.eot') format('eot')
+        url('../fonts/Nexa/NexaTextDemo-Bold.woff2') format('woff2'),
+        url('../fonts/Nexa/NexaTextDemo-Bold.woff') format('woff'),
+        url('../fonts/Nexa/NexaTextDemo-Light.eot') format('eot')
 }
