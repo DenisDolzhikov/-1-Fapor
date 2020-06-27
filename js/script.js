@@ -1,5 +1,38 @@
 "use strict";
 
+/* Sticky nav */
+let stickyNav = document.querySelector('.top-nav');
+
+if (window.scrollY > 120) {
+    stickyNav.classList.add('scroll');
+}
+ 
+function onScroll() {
+    window.addEventListener('scroll', callbackFunc);
+
+    function callbackFunc() {
+        if (window.matchMedia("(min-width: 1024px)").matches) {
+            let y = window.pageYOffset;
+
+            if (y > 120) {
+                stickyNav.classList.add('scroll');
+                stickyNav.style.transition = '0.5s';
+            } else {
+                stickyNav.classList.remove('scroll');
+            }
+        }
+    }
+}
+
+window.onload = function() {
+    onScroll();
+
+    /* Preloader */
+    document.body.classList.add('loaded');
+  
+}
+
+
 /* Overlay nav */
 function openOverlayNav() {
     document.getElementById('overlayNav').style.height = '100%';
@@ -11,6 +44,7 @@ function closeOverlayNav() {
 
 
 /* Sliders */
+
 let headerSliderSelector = document.querySelector('.header-slider');
 let headerSlider = new Flickity(headerSliderSelector, {
     cellAlign: 'left',
@@ -48,7 +82,7 @@ let recognitionSliderSelector = document.querySelector('.recognition-slider');
 let recognitionSlider = new Flickity(recognitionSliderSelector, {
     cellAlign: true,
     draggable: true,
-})
+});
 
 /* Animations */
 
@@ -283,8 +317,3 @@ $(window).scroll(function(){
 });
 
 
-/* Preloader */
-
-window.onload = function () {
-  document.body.classList.add('loaded');
-}
