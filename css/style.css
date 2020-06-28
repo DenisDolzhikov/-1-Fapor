@@ -64,7 +64,7 @@
   color: #f1f1f1;
 }
 
-#main {
+.page {
   padding-top: 110px;
   background-color: #24282f;
   -webkit-transition: -webkit-transform 0.5s;
@@ -1644,7 +1644,7 @@
             align-items: center;
     font-size: 2em;
   }
-  #main {
+  .page {
     padding-top: 60px;
   }
   .overlay-nav .overlay-nav-links .overlay-nav-links-item {
@@ -2546,7 +2546,7 @@
     padding-top: 12px;
     padding-bottom: 7px;
   }
-  #main {
+  .page {
     padding-top: 51px;
   }
   .overlay-nav .close-overlay-nav {

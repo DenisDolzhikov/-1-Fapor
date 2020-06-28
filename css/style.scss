@@ -52,7 +52,7 @@
     }
 }
 
-#main {
+.page {
     padding-top: 110px;
     background-color: #24282f;
     transition: transform 0.5s;
@@ -81,7 +81,7 @@
     overflow: hidden;
     z-index: 12;
     color: #ffffff;
-  
+
     .layout-centered {
         display: flex;
         justify-content: space-between;
@@ -1411,7 +1411,7 @@
         }
     }
 
-    #main {
+    .page {
         padding-top: 60px;
     }
 
@@ -2740,7 +2740,7 @@
         padding-bottom: 7px;
     }
 
-    #main {
+    .page {
         padding-top: 51px;
     }
   
